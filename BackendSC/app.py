@@ -67,4 +67,4 @@ if __name__ == '__main__':
     print("Iniciando servidor Flask...")
     init_db()
     app.run(debug=True, host='0.0.0.0')
-
+    
