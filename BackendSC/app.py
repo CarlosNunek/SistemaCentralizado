@@ -5,6 +5,7 @@ import sqlite3
 app = Flask(__name__)
 CORS(app)
 
+
 @app.route('/')
 def inicio():
     return render_template('index.html')
