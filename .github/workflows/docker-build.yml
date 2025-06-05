@@ -32,8 +32,8 @@ jobs:
           pip install flake8
       - name: Lint with flake8
         run: flake8 BackendSC --statistics
-
-    test:
+        
+  test:
     needs: lint
     runs-on: ubuntu-latest
     steps:
@@ -47,6 +47,7 @@ jobs:
 
       - name: Install dependencies
         run: |
+          pip install --upgrade pip
           pip install -r BackendSC/requirements.txt
           pip install pytest
 
