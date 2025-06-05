@@ -10,17 +10,14 @@ def inicio():
     return render_template('index.html')
 
 
-
 @app.route('/agregar')
 def pagina_agregar():
     return render_template('agregar.html')
 
 
-
 @app.route('/ver')
 def pagina_ver():
     return render_template('ver_notas.html')
-
 
 
 def init_db():
@@ -38,7 +35,6 @@ def init_db():
     conn.close()
 
 
-
 @app.route('/api/notas', methods=['GET'])
 def get_notas():
     conn = sqlite3.connect('database.db')
@@ -46,7 +42,6 @@ def get_notas():
     notas = conn.cursor().execute('SELECT * FROM notas').fetchall()
     conn.close()
     return jsonify([dict(nota) for nota in notas])
-
 
 
 @app.route('/api/agregar', methods=['POST'])
@@ -62,9 +57,7 @@ def agregar_nota():
     return jsonify({'mensaje': 'Nota guardada'})
 
 
-
 if __name__ == '__main__':
     print("Iniciando servidor Flask...")
     init_db()
     app.run(debug=True, host='0.0.0.0')
-    
